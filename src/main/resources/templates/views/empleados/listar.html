@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template ::head">
+
+
+</head>
+
+<body>
+	<header th:replace="plantilla/template ::header">
+	</header>
+	<div class="container">
+		<br></br>
+		<a class="btn btn-primary" th:href="@{/views/empleados/agregar}" th:text="'Agregar nuevo usuario'"></a>
+		<br></br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nombres</th>
+					<th scope="col">Apellidos</th>
+					<th scope="col">Fecha de nacimiento</th>
+					<th scope="col">Sexo</th>
+					<th scope="col">Salario</th>
+					<th scope="col">Departamento</th>
+					<th scope="col">Puesto</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp:${empleados}">
+					<th scope="row" th:text="${emp.id_empleado}"></th>
+					<td th:text="${emp.nombres}"></td>
+					<td th:text="${emp.apellidos}"></td>
+					<td th:text="${emp.fecha_nacimiento}"></td>
+					<td th:text="${emp.sexo}"></td>
+					<td th:text="${emp.salario}"></td>
+					<td th:text="${emp.departamento.nombre_departamento}"></td>
+					<td th:text="${emp.puesto.puesto}"></td>
+					<td><a class="btn btn-success" th:href="@{/views/empleados/edit/} + ${emp.id_empleado}"
+							th:text="'Editar'"></a>
+					</td>
+					<td><a class="btn btn-danger" th:href="@{/views/empleados/eliminar/} + ${emp.id_empleado}"
+							th:text="'Eliminar'" onclick="return confirm('¿Seguro de eliminar?');"></a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+
+</html>
