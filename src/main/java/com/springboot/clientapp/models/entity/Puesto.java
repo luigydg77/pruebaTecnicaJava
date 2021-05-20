@@ -28,12 +28,12 @@ public class Puesto implements Serializable {
 	public String getPuesto() {
 		return nombre_puesto;
 	}
-	public void setPuesto(String puesto) {
-		this.nombre_puesto = puesto;
+	public void setPuesto(String nombre_puesto) {
+		this.nombre_puesto = nombre_puesto;
 	}
 	@Override
 	public String toString() {
-		return "Puesto [id_puesto=" + id_puesto + ", puesto=" + nombre_puesto + "]";
+		return "Puesto [id_puesto=" + id_puesto + ", nombre_puesto=" + nombre_puesto + "]";
 	}
 	
 }

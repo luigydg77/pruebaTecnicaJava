@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template ::head">
+
+
+</head>
+
+<body>
+	<header th:replace="plantilla/template ::header">
+	</header>
+	<br></br>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+
+
+
+				<form th:action="@{save}" th:object="${puestos}" method="POST">
+					<div class="row">
+						<div class="col-md-6">
+							
+
+							<label for="exampleInputEmail1" class="form-label">Nombre: </label>
+							<input type="text" th:field="*{puesto}" class="form-control" id="puesto"
+								aria-describedby="Ingrese su nombre">
+								<br></br>
+							<input type="submit" class="btn btn-primary" value="Guardar" />
+						</div>
+
+
+
+
+
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

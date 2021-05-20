@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="empleado" , schema = "empleados")
 public class Empleado implements Serializable {
@@ -17,6 +18,7 @@ public class Empleado implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Long id_empleado;
 	private String nombres;
 	private String apellidos;

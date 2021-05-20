@@ -16,44 +16,44 @@
 
 
 
-				<form th:action="@{save}" th:object="${empleado}" method="POST">
+				<form  class="needs-validation" th:action="@{/views/empleados/save}" th:object="${empleado}" method="post">
 					<div class="row">
 						<div class="col-md-6">
 							<input  type="hidden" th:field="*{id_empleado}">
 
 							<label for="exampleInputEmail1" class="form-label">Nombre: </label>
 							<input type="text" th:field="*{nombres}" class="form-control" id="nombre"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 
 						</div>
 						<div class="col-md-6">
 							<label for="exampleInputEmail1" class="form-label">Apellidos: </label>
 							<input type="text" th:field="*{apellidos}" class="form-control" id="apellidos"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 
 						</div>
 						<div class="col-md-4">
 							<label for="exampleInputEmail1" class="form-label">Fecha de nacimiento: </label>
 							<input type="date" th:field="*{fecha_nacimiento}" class="form-control" id="fecha"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 
 						</div>
 						<div class="col-md-4">
 							<label for="exampleInputEmail1" class="form-label">Sexo: </label>
 							<input type="text" th:field="*{sexo}" class="form-control" id="sexo"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 
 						</div>
 						<div class="col-md-4">
 							<label for="exampleInputEmail1" class="form-label">Salario: </label>
 							<input type="text" th:field="*{salario}" class="form-control" id="salario"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 
 						</div>
 						<div class="col-md-6">
 							<label for="exampleInputEmail1" class="form-label">Departamento: </label>
 							<select class="form-control" th:field="*{departamento}" id="departamento"
-								aria-describedby="Ingrese su nombre">
+								aria-describedby="Ingrese su nombre" required>
 								<option th:each="departamento:${departamentos}"
 									th:value="${departamento.id_departamento}"
 									th:text="${departamento.nombre_departamento}" />
@@ -63,7 +63,7 @@
 						<div class="col-md-6">
 							<label for="exampleInputEmail1" class="form-label">Puesto: </label>
 							<select th:field="*{puesto}" class="form-control" id="puesto
-							" aria-describedby="Ingrese su nombre">
+							" aria-describedby="Ingrese su nombre" required>
 								<option th:each="puesto:${puesto}"
 									th:value="${puesto.id_puesto}"
 									th:text="${puesto.puesto}" />

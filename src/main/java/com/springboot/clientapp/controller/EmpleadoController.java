@@ -46,15 +46,6 @@ public class EmpleadoController {
 		model.addAttribute("puesto",listPuesto);
 		return "/views/empleados/agregar";
 	}
-	
-	@PostMapping("/save")
-	public String guardar(@ModelAttribute Empleado empleado) {
-		System.out.print(empleado);
-		EmpleadoService.guardar(empleado);
-	
-		return "redirect:/views/empleados/";
-	}
-	
 	@GetMapping("/edit/{id}")
 	public String editar(@PathVariable("id") Long id_empleado, Model model) {
 		Empleado empleado = EmpleadoService.buscarPorId(id_empleado);
@@ -65,6 +56,14 @@ public class EmpleadoController {
 		model.addAttribute("puesto",listPuesto);
 		return "/views/empleados/agregar";
 	}
+	@PostMapping("/save")
+	public String guardar(@ModelAttribute Empleado empleado) {
+		
+		EmpleadoService.guardar(empleado);
+	
+		return "redirect:/views/empleados/";
+	}
+
 	
 	
 	@GetMapping("/eliminar/{id}")
